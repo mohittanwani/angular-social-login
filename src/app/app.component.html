@@ -1,0 +1,40 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+    <div class="jumbotron bg-transparent text-center">
+      <div *ngIf="!user" class="card text-center">
+        <h6 class="card-header">
+          Welcome to {{ title }}!
+        </h6>
+        <div class="card-block">
+           <img width="200" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+          <h4 class="card-title">Not signed in</h4>
+          <p class="card-text">Sign in with</p>
+        </div>
+        <div class="card-block">
+          <button class="btn btn-social-icon btn-google" (click)="signInWithGoogle()"><span class="fa fa-google"></span></button>
+          <button class="btn btn-social-icon btn-facebook" (click)="signInWithFB()"><span class="fa fa-facebook"></span></button>
+        </div>
+      </div>
+      <div *ngIf="user" class="card text-center">
+        <h6 class="card-header">
+          Social Login Demo
+        </h6>
+        <div class="card-block">
+        <img class="card-img-top img-responsive photo" height="100" width="100" src="{{ user.photoUrl }}">
+        </div>
+        <div class="card-block">
+          <h4 class="card-title">{{ user.name }}</h4>
+          <p class="card-text">{{ user.email }}</p>
+        </div>
+        <div class="card-block">
+          <button class="btn btn-danger" (click)="signOut()">Sign out</button>
+        </div>
+      </div>
+    </div>
+      </div>
+  </div>
+</div>
+
+
